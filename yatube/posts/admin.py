@@ -18,10 +18,11 @@ class PostAdmin(admin.ModelAdmin):
 
 
 class GroupAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'description') 
+    list_display = ('title', 'slug', 'description')
     search_fields = ('title',)
-    # Это свойство сработает для всех колонок: где пусто — там будет эта строка 
+    #Это свойство сработает для всех колонок: где пусто — там будет эта строка
     empty_value_display = '-пусто-'
+
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Group, GroupAdmin)

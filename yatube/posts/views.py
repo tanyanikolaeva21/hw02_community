@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
 
+
 def index(request):
     template = 'posts/index.html'
     title = 'Это главная страница проекта Yatube'
@@ -8,9 +9,10 @@ def index(request):
     context = {
         # В словарь можно передать переменную
         'title': title,
-        'posts':posts,
+        'posts': posts,
     }
     return render(request, 'posts/index.html', context)
+
 
 def group_posts(request, slug):
     # Функция get_object_or_404 получает по заданным критериям объект 
@@ -18,7 +20,6 @@ def group_posts(request, slug):
     # В нашем случае в переменную group будут переданы объекты модели Group,
     # поле slug у которых соответствует значению slug в запросе
     group = get_object_or_404(Group, slug=slug)
-
     # Метод .filter позволяет ограничить поиск по критериям.
     # Это аналог добавления
     # условия WHERE group_id = {group_id}
