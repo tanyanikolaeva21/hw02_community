@@ -68,7 +68,7 @@ TEMPLATES = [
             ]
         },
     }
-] 
+]
 
 WSGI_APPLICATION = 'yatube.wsgi.application'
 
