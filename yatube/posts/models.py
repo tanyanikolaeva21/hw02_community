@@ -28,6 +28,5 @@ class Post(models.Model):
         on_delete=models.CASCADE,
         related_name='posts'
     )
-class Meta:
-    ordering = ['-pub_date']
-
+    class Meta:
+        ordering = ['-pub_date']
