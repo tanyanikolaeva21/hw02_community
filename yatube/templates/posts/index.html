@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-<!DOCTYPE html> <!-- Используется html 5 версии -->
-<html lang="ru"> <!-- Язык сайта - русский -->
+<!DOCTYPE html>
+<html lang="ru">
 {% block content %}
 {% for post in posts %}
   <ul>
@@ -12,7 +12,7 @@
     </li>
   </ul>
   <p>{{ post.text }}</p>    
-  <a href="{% url 'posts:group_p' post.group.slug %}">все записи группы</a>
+  <a href="{% url 'posts:group_posts' post.group.slug %}">все записи группы</a>
   {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
     {% endblock %}
