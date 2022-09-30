@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
 
-TEN=10
+TEN = 10
+
 
 def index(request):
     title = 'Это главная страница проекта Yatube'
