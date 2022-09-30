@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
 
+TEN=10
 
 def index(request):
     title = 'Это главная страница проекта Yatube'
-    posts = posts = Post.objects.all()[:10]
+    posts = Post.objects.all()[:TEN]
     context = {
         'title': title,
         'posts': posts,
@@ -14,7 +15,7 @@ def index(request):
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = Post.objects.all()[:10]
+    posts = Post.objects.filter(group=group)[:TEN]
     context = {
         'group': group,
         'posts': posts,
